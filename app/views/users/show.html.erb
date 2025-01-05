@@ -1,0 +1,35 @@
+<h1>User Details</h1>
+
+<div>
+<strong>Name:</strong>
+<p><%= @user.name %></p>
+</div>
+
+<div>
+<strong>Email:</strong>
+<p><%= @user.email %></p>
+</div>
+
+<div>
+<strong>Phone Number:</strong>
+<p><%= @user.phone_number %></p>
+</div>
+
+<div>
+<strong>Created At:</strong>
+<p><%= @user.created_at.strftime("%B %d, %Y at %I:%M %p") %></p>
+</div>
+
+<div>
+<strong>Updated At:</strong>
+<p><%= @user.updated_at.strftime("%B %d, %Y at %I:%M %p") %></p>
+</div>
+
+<hr>
+
+<div>
+<%= link_to "Edit User", edit_user_path(@user), class: "btn btn-primary" %>
+<%= link_to "Back to Users List", users_path, class: "btn btn-secondary" %>
+<%= link_to "Delete User", user_path(@user), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+</div>
+<%= javascript_include_tag "application", "data-turbo-track": "reload" %>

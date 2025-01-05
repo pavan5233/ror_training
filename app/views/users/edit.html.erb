@@ -1,0 +1,27 @@
+<h1>Edit User</h1>
+
+<%= form_with(model: @user, local: true) do |form| %>
+<div>
+<%= form.label :name, "Name" %><br>
+<%= form.text_field :name, value: @user.name, placeholder: "Enter name" %>
+</div>
+
+<div>
+<%= form.label :email, "Email" %><br>
+<%= form.email_field :email, value: @user.email, placeholder: "Enter email" %>
+</div>
+
+<div>
+    <%= form.label :phone_number, "Phone Number" %><br>
+    <%= form.text_field :phone_number, value: @user.phone_number, placeholder: "Phone Number", maxlength: "10" %>
+</div>
+
+<div>
+<%= form.label :password, "Password" %><br>
+<%= form.password_field :password, placeholder: "Enter new password (optional)" %>
+</div>
+
+<div>
+<%= form.submit "Update User" %>
+</div>
+<% end %>
